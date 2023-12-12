@@ -175,3 +175,73 @@ additional_content = """
 
 12. **How do you optimize React applications?**
     - Answer: React applications can be optimized using techniques like memoization, lazy loading components, and avoiding unnecessary re-renders.
+
+## Props in React
+
+In React, a popular JavaScript library for building user interfaces, **"props"** is a concept referring to the arguments passed into React components. Props are used to pass data from a parent component to a child component. Here are some examples of props in React:
+
+### Basic Text Props
+
+Passing simple string data to a component.
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+<Welcome name="Sara" />;
+```
+
+Props for User Data
+Passing an object to a component to display user information.
+
+jsx
+Copy code
+function UserProfile(props) {
+return (
+<div>
+<h1>{props.user.name}</h1>
+<p>Email: {props.user.email}</p>
+</div>
+);
+}
+
+const user = { name: 'John Doe', email: 'johndoe@example.com' };
+<UserProfile user={user} />
+Props for Event Handling
+Passing a function as a prop to handle events.
+
+jsx
+Copy code
+function Button(props) {
+return <button onClick={props.handleClick}>Click me</button>;
+}
+
+function handleButtonClick() {
+console.log('Button clicked');
+}
+
+<Button handleClick={handleButtonClick} />
+Children Prop
+Special prop for passing children elements directly into a component.
+
+jsx
+Copy code
+function Card(props) {
+return <div className="card">{props.children}</div>;
+}
+
+<Card>
+  <h1>This is a card</h1>
+  <p>This is some card content.</p>
+</Card>
+Props for Styling
+Passing style-related data.
+
+jsx
+Copy code
+function AlertBox(props) {
+return <div style={{ color: props.color }}>{props.message}</div>;
+}
+
+<AlertBox color="red" message="This is an error!" />
